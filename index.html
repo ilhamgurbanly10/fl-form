@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="flash.css">
+    <script src="flash.js" defer=""></script>
+    <title>Form</title>
+
+    <style>
+
+        .fl-form {
+            width: 90%;
+            display: block;
+            margin: 3rem auto;
+        }
+
+        @media (min-width: 992px) {
+            .fl-form {
+                width: 400px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <form action="" class="fl-form">
+
+        <div class="fl-form-group">
+
+            <label for="email" class="fl-form-label">Email</label>
+
+            <input type="email" id="email" placeholder="Enter your email..." class="fl-form-input fl-form-required fl-form-email">
+            
+            <p class="fl-form-error-message fl-form-required-message">
+                This field is required
+            </p>
+
+            <p class="fl-form-error-message fl-form-email-message">
+                Invalid Email address
+            </p>
+
+        </div>
+
+        <div class="fl-form-group">
+
+            <label for="name" class="fl-form-label">Name</label>
+
+            <input type="text" id="name" placeholder="Enter your name..." class="fl-form-input fl-form-required fl-form-range" min-length="5" max-length="15">
+            
+            <p class="fl-form-error-message fl-form-required-message">
+                This field is required
+            </p>
+
+            <p class="fl-form-error-message fl-form-min-message">
+                Minimum character limit is 5
+            </p>
+
+            <p class="fl-form-error-message fl-form-max-message">
+                Maximum character limit is 15
+            </p>
+
+        </div>
+
+        <div class="fl-form-group">
+
+            <label for="surname" class="fl-form-label">Surname</label>
+
+            <input type="text" id="surname" placeholder="Enter your surname..." class="fl-form-input fl-form-required fl-form-range" min-length="5" max-length="15">
+
+            <p class="fl-form-error-message fl-form-required-message">
+                This field is required
+            </p>
+
+            <p class="fl-form-error-message fl-form-min-message">
+                Minimum character limit is 5
+            </p>
+
+            <p class="fl-form-error-message fl-form-max-message">
+                Maximum character limit is 15
+            </p>
+
+        </div>
+
+        <div class="fl-form-group">
+
+            <label for="message" class="fl-form-label">Message</label>
+
+            <textarea type="text" rows="7" id="message" placeholder="Enter your message..." class="fl-form-input fl-form-required fl-form-range fl-form-textarea" min-length="10" max-length="100"></textarea>
+            
+            <p class="fl-form-textarea-left-characters">
+                <span class="fl-form-textarea-left-characters-length"></span>
+                characters left
+            </p>
+
+            <p class="fl-form-error-message fl-form-required-message">
+                This field is required
+            </p>
+
+            <p class="fl-form-error-message fl-form-min-message">
+                Minimum character limit is 10
+            </p>
+
+            <p class="fl-form-error-message fl-form-max-message">
+                Maximum character limit is 100
+            </p>
+
+        </div>
+
+        <div class="fl-form-group">
+
+            <button type="submit" class="fl-form-btn fl-form-submit">
+                Send
+            </button>
+
+            <button type="reset" class="fl-form-btn fl-form-reset">
+                Reset
+            </button>
+        
+        </div>
+
+
+    </form>
+    
+</body>
+</html>

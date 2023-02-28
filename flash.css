@@ -1,0 +1,79 @@
+/* fl-form */
+.fl-form {
+    display: block;
+}
+
+.fl-form * {
+    box-sizing: border-box;
+}
+
+.fl-form-group:not(:first-child) {
+    margin-top: 1.5rem;
+}
+
+.fl-form-label {
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.fl-form-input {
+    outline: 0 !important;
+    border: 1px solid rgb(213, 213, 213);
+    border-radius: 7px;
+    padding: .7rem 1rem;
+    transition: all .3s;
+    width: 100%;
+}
+
+.fl-form-input:focus {
+    border-color: rgb(68, 156, 239);
+    box-shadow: 1px 1px 2px rgb(68, 156, 239, .3), -1px -1px 2px rgb(68, 156, 239, .3);
+}
+
+.fl-form-error-message {
+    color: red;
+    display: none;
+}
+
+.fl-form-input.error {
+    border-color: red;
+}
+
+.fl-form-input.error:focus {
+    box-shadow: 1px 1px 2px rgb(255, 0, 0, .3), -1px -1px 2px rgb(255, 0, 0, .3);
+}
+
+.fl-form-error-message.show {
+    display: block;
+}
+
+.fl-form-btn {
+    color: white;
+    transition: all .3s;
+    border-radius: 7px;
+    padding: .7rem 1rem;
+    background-color: rgb(68, 156, 239);
+    outline: 0 !important;
+    display: block;
+    border: 0 !important;
+    width: 100%;
+    cursor: pointer;
+}
+
+.fl-form-btn.disabled {
+    background-color:  rgb(213, 213, 213);
+    cursor: not-allowed;
+}
+
+.fl-form-reset {
+    margin-top: 1rem;
+    background-color: red;
+}
+
+.fl-form-textarea-left-characters {
+    text-align: right;
+    color: rgb(132, 131, 131);
+    margin-top: 4px;
+    font-size: 15px;
+}
+/* the-end-of-fl-form */
