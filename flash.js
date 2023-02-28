@@ -13,6 +13,28 @@ const flForm = () => {
         const reset = f.querySelector('.fl-form-reset');
         const allMessages = f.querySelectorAll('.fl-form-error-message');
         const allInputs = f.querySelectorAll('.fl-form-input');
+        const password = f.querySelector('.fl-form-password');
+        const passwordRepeat = f.querySelector('.fl-form-password-repeat');
+        const passwordBtn = f.querySelector('.fl-form-password-icon');
+        const passwordRepeatBtn = f.querySelector('.fl-form-password-repeat-icon');
+        const passwordRepeatMes = f.querySelector('.fl-form-password-repeat-message');
+        const profileImgInput = f.querySelector('.fl-form-profile-img-input');
+        const profileImgBox = f.querySelector('.fl-form-profile-img-box');
+        const profileImg = f.querySelector('.fl-form-profile-img');
+        
+        const displayImage = (e) => {
+            profileImgBox.classList.add('show');
+            profileImg.src = URL.createObjectURL(profileImgInput.files[0])
+        }
+
+        const hideImage = (e) => {
+            profileImgBox.classList.remove('show');
+            profileImg.src = ""
+        }
+
+        if (profileImgInput) { 
+            profileImgInput.addEventListener('change', displayImage);
+        }
 
         const isRequired = (e) => {
             const inp = e.target;
@@ -74,6 +96,8 @@ const flForm = () => {
                     textarea.closest('.fl-form-group').querySelector('.fl-form-textarea-left-characters-length').innerHTML = textarea.getAttribute('max-length');
                 }
             })
+
+            hideImage();
 
         }
 
@@ -157,6 +181,64 @@ const flForm = () => {
         if (email) email.addEventListener('keyup', emailValidation);
         submit.addEventListener('click', validationOnSubmit);
         
+        const passwordConfirmation = () => {
+
+            if (passwordRepeat.value.length == 0) { 
+                passwordRepeatMes.classList.remove('show'); 
+            }    
+            else if (password.value != passwordRepeat.value) { 
+                passwordRepeatMes.classList.add('show');
+                passwordRepeat.classList.add('error');
+            }
+            else { 
+                passwordRepeatMes.classList.remove('show');
+
+                const minLength = passwordRepeat.getAttribute('min-length');
+                const maxLength = passwordRepeat.getAttribute('max-length');
+                const len = passwordRepeat.value.length;
+                if (len >= minLength && len <= maxLength) passwordRepeat.classList.remove('error');
+            }
+
+        }
+
+        if (password) {
+
+            passwordBtn.addEventListener('click', () => {
+
+                if (password.getAttribute('type') == 'password') {
+                    password.setAttribute('type', 'text');
+                    passwordBtn.classList.add('fa-eye');
+                    passwordBtn.classList.remove('fa-eye-slash');
+                } else {
+                    password.setAttribute('type', 'password');
+                    passwordBtn.classList.remove('fa-eye');
+                    passwordBtn.classList.add('fa-eye-slash');
+                }
+
+            })
+
+        }    
+
+        if (passwordRepeat) {
+
+            passwordRepeatBtn.addEventListener('click', () => {
+
+                if (passwordRepeat.getAttribute('type') == 'password') {
+                    passwordRepeat.setAttribute('type', 'text');
+                    passwordRepeatBtn.classList.add('fa-eye');
+                    passwordRepeatBtn.classList.remove('fa-eye-slash');
+                } else {
+                    passwordRepeat.setAttribute('type', 'password');
+                    passwordRepeatBtn.classList.remove('fa-eye');
+                    passwordRepeatBtn.classList.add('fa-eye-slash');
+                }
+
+            })
+
+            password.addEventListener('keyup', passwordConfirmation)
+            passwordRepeat.addEventListener('keyup', passwordConfirmation)
+
+        }
 
     }
 

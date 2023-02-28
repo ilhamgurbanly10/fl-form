@@ -47,7 +47,8 @@
     display: block;
 }
 
-.fl-form-btn {
+.fl-form-btn,
+.fl-form-profile-img-label {
     color: white;
     transition: all .3s;
     border-radius: 7px;
@@ -76,4 +77,54 @@
     margin-top: 4px;
     font-size: 15px;
 }
+
+.fl-form-password-parent,
+.fl-form-password-repeat-parent {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.fl-form-password,
+.fl-form-password-repeat {
+    padding-right: 3rem;
+}
+
+.fl-form-password-icon,
+.fl-form-password-repeat-icon {
+    position: absolute;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.fl-form-profile-img-label {
+    display: inline-block;
+    width: initial;
+}
+
+.fl-form-profile-img-input,
+.fl-form-profile-img-box {
+    display: none;
+}
+
+.fl-form-profile-img-box {
+    width: 150px;
+    height: 150px;
+    /* border-radius: 100%; */
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.fl-form-profile-img-box.show {
+    display: block;
+}
+
+.fl-form-profile-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+}
+
 /* the-end-of-fl-form */

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="flash.css">
+    <link rel="stylesheet" type="text/css" href="font_awesome/css/font-awesome.min.css">
     <script src="flash.js" defer=""></script>
     <title>Form</title>
 
@@ -28,6 +29,18 @@
 
 
     <form action="" class="fl-form">
+
+        <div class="fl-form-group">
+
+            <label for="profileImage" class="fl-form-profile-img-label">Profile Image</label>
+
+            <input type="file" accept="image/*" id="profileImage" class="fl-form-profile-img-input">
+            
+            <div class="fl-form-profile-img-box">
+                <img src="" alt="Profile Image" class="fl-form-profile-img">
+            </div>
+
+        </div>
 
         <div class="fl-form-group">
 
@@ -106,6 +119,56 @@
 
             <p class="fl-form-error-message fl-form-max-message">
                 Maximum character limit is 100
+            </p>
+
+        </div>
+
+        <div class="fl-form-group">
+
+            <label for="password" class="fl-form-label">Password</label>
+
+            <div class="fl-form-password-parent">
+                <input type="password" id="password" placeholder="Enter your password..." class="fl-form-input fl-form-password fl-form-required fl-form-range" min-length="8" max-length="20">
+                <i class="fa fa-eye-slash fl-form-password-icon"></i>
+            </div>
+
+            <p class="fl-form-error-message fl-form-required-message">
+                This field is required
+            </p>
+
+            <p class="fl-form-error-message fl-form-min-message">
+                Minimum character limit is 8
+            </p>
+
+            <p class="fl-form-error-message fl-form-max-message">
+                Maximum character limit is 20
+            </p>
+
+        </div>
+
+        <div class="fl-form-group">
+
+            <label for="passwordRepeat" class="fl-form-label">Password Confirmation</label>
+
+            <div class="fl-form-password-repeat-parent">
+                <input type="password" id="passwordRepeat" placeholder="Confirm your password..." class="fl-form-input fl-form-password-repeat fl-form-required fl-form-range" min-length="8" max-length="20">
+                <i class="fa fa-eye-slash fl-form-password-repeat-icon"></i>
+            </div>
+
+            <p class="fl-form-error-message fl-form-required-message">
+                This field is required
+            </p>
+
+            <p class="fl-form-error-message fl-form-min-message">
+                Minimum character limit is 8
+            </p>
+
+            <p class="fl-form-error-message fl-form-max-message">
+                Maximum character limit is 20
+            </p>
+
+            <p class="fl-form-error-message fl-form-password-repeat-message">
+                Password confirmation is not valid
             </p>
 
         </div>
