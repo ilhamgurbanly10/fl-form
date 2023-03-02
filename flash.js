@@ -250,7 +250,7 @@ const flForm = () => {
             const inp = e.target;
             const val = inp.value;
             const len = val.length;
-            const key = String.fromCharCode(e.keyCode)
+            const key = e.key;
             alert(key);
             alert(e.keyCode);
             alert(!isNumber(key));
