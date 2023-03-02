@@ -249,8 +249,10 @@ const flForm = () => {
             const inp = e.target;
             const val = inp.value;
             const len = val.length;
-
-            if (!isNumber(e.key) || len > 11) e.preventDefault()
+            const keyCode = e.which || e.keyCode;
+            const key = String.fromCharCode(keyCode)
+            
+            if (!isNumber(key) || len > 11) e.preventDefault();
             if (len == 2 || len == 6 || len == 9) inp.value += " "; 
             
         }
