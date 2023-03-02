@@ -246,10 +246,14 @@ const flForm = () => {
 
         const phoneNumberMask = (e) => {
 
+            
             const inp = e.target;
             const val = inp.value;
             const len = val.length;
             const key = String.fromCharCode(e.keyCode)
+            alert(key);
+            alert(e.keyCode);
+            alert(!isNumber(key));
             if (e.keyCode == 8) return;
             if (!isNumber(key) || len > 11) e.preventDefault();
             if (len == 2 || len == 6 || len == 9) inp.value += " "; 
