@@ -246,6 +246,7 @@ const flForm = () => {
 
         const phoneNumberMask = (e) => {
 
+            alert("Hi")
             const inp = e.target;
             const val = inp.value;
             const len = val.length;

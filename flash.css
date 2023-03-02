@@ -5,6 +5,7 @@
 
 .fl-form * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .fl-form-group:not(:first-child) {
