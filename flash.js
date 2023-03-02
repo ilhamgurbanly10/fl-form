@@ -246,13 +246,11 @@ const flForm = () => {
 
         const phoneNumberMask = (e) => {
 
-            alert("Hi")
             const inp = e.target;
             const val = inp.value;
             const len = val.length;
-            const keyCode = e.which || e.keyCode;
-            const key = String.fromCharCode(keyCode)
-            
+            const key = e.key;
+            if (key == "Backspace") return;
             if (!isNumber(key) || len > 11) e.preventDefault();
             if (len == 2 || len == 6 || len == 9) inp.value += " "; 
             
@@ -293,7 +291,7 @@ const flForm = () => {
 
         if (phoneNumber) { 
 
-            phoneNumber.addEventListener('keypress', phoneNumberMask);
+            phoneNumber.addEventListener('keydown', phoneNumberMask);
             phoneNumber.addEventListener('keyup', phoneNumberMaskOnKeyUp);
             phoneNumber.addEventListener('paste', (e) => {
                e.preventDefault();
