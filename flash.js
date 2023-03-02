@@ -21,6 +21,8 @@ const flForm = () => {
         const profileImgInput = f.querySelector('.fl-form-profile-img-input');
         const profileImgBox = f.querySelector('.fl-form-profile-img-box');
         const profileImg = f.querySelector('.fl-form-profile-img');
+        const phoneNumber = f.querySelector('.fl-form-phone-number');
+        const phoneNumberMes = f.querySelector('.fl-form-phone-number-message');
         
         const displayImage = (e) => {
             profileImgBox.classList.add('show');
@@ -30,10 +32,6 @@ const flForm = () => {
         const hideImage = (e) => {
             profileImgBox.classList.remove('show');
             profileImg.src = ""
-        }
-
-        if (profileImgInput) { 
-            profileImgInput.addEventListener('change', displayImage);
         }
 
         const isRequired = (e) => {
@@ -239,6 +237,68 @@ const flForm = () => {
             passwordRepeat.addEventListener('keyup', passwordConfirmation)
 
         }
+
+        if (profileImgInput) { 
+            profileImgInput.addEventListener('change', displayImage);
+        }
+
+        const isNumber = (val) => /[0-9]/.test(val);
+
+        const phoneNumberMask = (e) => {
+
+            const inp = e.target;
+            const val = inp.value;
+            const len = val.length;
+
+            if (!isNumber(e.key) || len > 11) e.preventDefault()
+            if (len == 2 || len == 6 || len == 9) inp.value += " "; 
+            
+        }
+
+        const phoneNumberMaskOnKeyUp = (e) => {
+            
+            const len = e.target.value.length;
+
+            if (len == 0) phoneNumberMes.classList.remove('show')
+
+            else if (len < 12 && len > 0) {
+                addPhoneNumberError();
+                disableForm();
+            }
+
+            else {
+                clearPhoneNumberError();
+                if (!errorExist(e.target)) { 
+                    submit.classList.remove('disabled');
+                    submit.removeAttribute('disabled');
+                }
+            }
+
+           
+            
+        }
+
+        const addPhoneNumberError = () => {
+            phoneNumberMes.classList.add('show')
+            phoneNumber.classList.add('error')
+        }
+
+        const clearPhoneNumberError = () => {
+            phoneNumberMes.classList.remove('show')
+            phoneNumber.classList.remove('error')
+        }
+
+        if (phoneNumber) { 
+
+            phoneNumber.addEventListener('keypress', phoneNumberMask);
+            phoneNumber.addEventListener('keyup', phoneNumberMaskOnKeyUp);
+            phoneNumber.addEventListener('paste', (e) => {
+               e.preventDefault();
+            });
+
+        }
+
+        
 
     }
 

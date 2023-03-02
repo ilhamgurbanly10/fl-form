@@ -111,7 +111,6 @@
 .fl-form-profile-img-box {
     width: 150px;
     height: 150px;
-    /* border-radius: 100%; */
     overflow: hidden;
     margin-top: 2rem;
 }
@@ -127,4 +126,43 @@
     min-height: 100%;
 }
 
+/* Chrome, Safari, Edge, Opera */
+.fl-form-phone-number::-webkit-outer-spin-button,
+.fl-form-phone-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.fl-form-phone-number[type=number] {
+  -moz-appearance: textfield;
+}
+
+.fl-form-phone-number-box {
+    display: flex;
+}
+
+.fl-form-phone-number-prefix {
+    width: 25%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.fl-form-phone-number {
+    width: 75%;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+@media (min-width: 576px) {
+
+    .fl-form-phone-number-prefix {
+        width: 20%;
+    }
+    
+    .fl-form-phone-number {
+        width: 80%;
+    }
+
+}
 /* the-end-of-fl-form */
