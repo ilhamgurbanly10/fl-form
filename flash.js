@@ -252,6 +252,7 @@ const flForm = () => {
             const len = val.length;
             const key = e.key;
             alert(key);
+            alert(e.which);
             alert(e.keyCode);
             alert(!isNumber(key));
             if (e.keyCode == 8) return;
